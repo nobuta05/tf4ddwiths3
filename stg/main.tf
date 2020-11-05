@@ -15,6 +15,11 @@ terraform {
   }
 }
 
+provider "datadog" {
+  api_key = var.dd_api_key
+  app_key = var.dd_app_key
+}
+
 resource "datadog_monitor" "cpu_user_monitor_prod" {
   name = "CPU User Monitor for Production"
   type = "metric alert"
